@@ -1,0 +1,64 @@
+{
+	"homeUrl": "http:\/\/www.lvsetxt.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/img\/@src",
+			"statusText": ["\/\/span[contains(text(), \"状态：\")]", "substring-after(., \"：\")"],
+			"lastUpdateDate": ["\/\/span[contains(text(), \"更新时间：\")]", "substring-after(., \"：\")"],
+			"typeText": ["\/\/span[contains(text(), \"分类：\")]", "substring-after(., \"：\")"],
+			"wordCount": ["\/\/span[contains(text(), \"字数：\")]", "substring-after(., \"：\")"],
+			"desc": ".\/\/div[@class=\"intro\"]\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@class=\"showtxt\"]"
+		},
+		"params": {}
+	},
+	"weight": 24,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[contains(@class, \"listmain\")]\/dl\/\/dd",
+				"title": ".\/a\/text()",
+				"url": ".\/\/@href"
+			},
+			"lastUpdateDate": ["\/\/span[contains(text(), \"更新时间：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"bookWorldGroupName": "优选",
+	"lastModifyTime": "2019-02-18 23:01:55",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"author": [".\/\/div[@class=\"author\"]\/text()", "substring-after(., \"：\")"],
+			"_1": {
+				"dirURL": ".\/\/div[@class=\"bookimg\"]\/a\/@href"
+			},
+			"_list": "\/\/div[contains(@class, \"type_show\")]\/div",
+			"bookName": ".\/\/h4[@class=\"bookname\"]\/a\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/\/p\/text()",
+			"typeText": [".\/\/div[@class=\"cat\"]\/text()", "substring-after(., \"：\")"]
+		},
+		"params": {},
+		"url": "http:\/\/www.lvsetxt.com\/s.php?s=11736559451321545567&ie=gbk&q=%@"
+	},
+	"name": "绿色小说网"
+}

@@ -1,0 +1,64 @@
+{
+	"homeUrl": "http:\/\/www.uuxs.la",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"nextPageParams": {},
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "",
+			"statusText": ".\/\/span[@class=\"fr\"]\/i[1]\/text()",
+			"typeText": ".\/\/span[@class=\"c2\"]\/a\/text()",
+			"wordCount": ".\/\/span[@class=\"fr\"]\/i[2]\/text()",
+			"desc": [".\/\/p[@class=\"intro\"]", "substring-after(., \"：\")"]
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": 1,
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"BookText\"]"
+		},
+		"params": {}
+	},
+	"weight": 76,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[contains(@class, \"inner\")]\/dl\/\/dd",
+				"title": ".\/a\/text()",
+				"url": ".\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:06:23",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": ".\/h3\/a\/@href"
+			},
+			"author": ".\/p[1]\/i[1]\/text()",
+			"bookName": ".\/h3\/a\/text()",
+			"_list": "\/\/div[contains(@class, \"details\")]\/div",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/p[3]\/text()"
+		},
+		"params": {},
+		"url": "http:\/\/www.uuxs.la\/modules\/article\/search.php?searchkey=%@"
+	},
+	"name": "UU小说"
+}

@@ -1,0 +1,55 @@
+{
+	"homeUrl": "https:\/\/www.wqge.cc",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@id=\"bdshare\"]\/img\/@src",
+			"desc": ".\/\/div[@id=\"intro\"]",
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 36,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"],
+			"_1": {
+				"_list": ".\/\/div[contains(@id, \"list\")]\/\/dl\/dd[position()>9]",
+				"title": ".\/a\/text()",
+				"url": ".\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 22:53:46",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {},
+			"author": "",
+			"bookName": "",
+			"_list": ""
+		},
+		"params": {},
+		"url": "https:\/\/www.wqge.cc\/modules\/article\/search.php?searchkey=%@"
+	},
+	"name": "笔趣阁④"
+}

@@ -1,0 +1,57 @@
+{
+	"homeUrl": "http:\/\/www.bxwx666.org",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "\/\/div[@id=\"fmimg\"]\/img\/@src",
+			"desc": ".\/\/div[@id=\"intro\"]\/p[1]\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@id=\"zjneirong\"]"
+		},
+		"params": {}
+	},
+	"weight": 32,
+	"priorityEncoding": 2147485234,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[contains(@id, \"list\")]\/dl\/\/dd",
+				"title": ".\/\/text()",
+				"url": ".\/\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 22:56:12",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": ".\/span[@class=\"s2\"]\/a\/@href"
+			},
+			"author": ".\/span[@class=\"s4\"]\/text()",
+			"bookName": ".\/span[@class=\"s2\"]\/a\/text()",
+			"_list": "\/\/div[contains(@class, \"l\")]\/\/ul\/li",
+			"typeText": [".\/span[@class=\"s1\"]\/text()", "@regex:\\[ @=>", "@regex:\\] @=>"]
+		},
+		"params": {},
+		"url": "http:\/\/www.bxwx666.org\/search.aspx?bookname=%@"
+	},
+	"name": "笔下文学℡"
+}

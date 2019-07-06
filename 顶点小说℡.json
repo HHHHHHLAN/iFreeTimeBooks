@@ -1,0 +1,62 @@
+{
+	"homeUrl": "https:\/\/www.208xs.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@class=\"img\"]\/img\/@src",
+			"statusText": [".\/\/p[contains(text(), \"连载完成\")]", "substring-after(., \"：\")"],
+			"lastUpdateDate": [".\/\/p[contains(text(), \"更新时间\")]", "substring-after(., \"：\")"],
+			"typeText": [".\/\/p[contains(text(), \"所属类型\")]", "substring-after(., \"：\")"],
+			"desc": ".\/\/div[@id=\"intro\"]\/p\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"book_text\"]"
+		},
+		"params": {}
+	},
+	"weight": 82,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": [".\/\/p[contains(text(), \"更新时间\")]", "substring-after(., \"：\")"],
+			"_1": {
+				"_list": "\/\/div[contains(@class, \"article_texttitleb\")]\/\/ul\/li",
+				"title": ".\/a\/text()",
+				"url": ".\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:06:00",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"author": [".\/\/span[contains(text(), \"作者\")]", "substring-after(., \"：\")"],
+			"_1": {
+				"dirURL": ".\/\/div[@class=\"pic\"]\/a\/@href"
+			},
+			"_list": "\/\/ul[contains(@class, \"nr\")]\/li",
+			"bookName": ".\/\/strong\/a\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/\/p\/text()",
+			"typeText": [".\/\/span[contains(text(), \"类型\")]", "substring-after(., \"：\")"]
+		},
+		"params": {},
+		"url": "https:\/\/www.208xs.com\/searchbook.php?search_key=%@"
+	},
+	"name": "顶点小说℡"
+}

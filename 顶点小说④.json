@@ -1,0 +1,65 @@
+{
+	"homeUrl": "https:\/\/www.booktxt.com",
+	"enable": true,
+	"authorId": "f6c7b3b2e24e10542d9fb490b46c4752",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/img[@alt]\/@src",
+			"lastUpdateDate": [".\/\/p[contains(text(), \"最后更新\")]", "substring-after(., \"：\")"],
+			"typeText": [".\/\/p[contains(text(), \"态：\")]", "substring-after(., \"：\")", "substring-before(., \",\")"],
+			"desc": ".\/\/div[@id=\"intro\"]\/p[1]\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 52,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": [".\/\/p[contains(text(), \"最后更新\")]", "substring-after(., \"：\")"],
+			"_1": {
+				"_list": ".\/\/div[contains(@id, \"list\")]\/\/dd",
+				"title": ".\/\/text()",
+				"url": ".\/\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:08:02",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"author": [".\/\/p[contains(@class, \"tag\")][1]\/span[2]\/text()", "@regex:&#13; @=>", "@regex:\\s+ @=>"],
+			"_1": {
+				"dirURL": ".\/\/a[@cpos=\"title\"]\/@href"
+			},
+			"_list": ".\/\/div[contains(@class, \"list\")]\/div",
+			"bookName": ".\/\/h3\/a\/span\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/\/p[contains(@class, \"desc\")]\/text()",
+			"typeText": ".\/\/p[contains(@class, \"tag\")][2]\/span[2]\/text()"
+		},
+		"forGetMethod": true,
+		"params": {},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"nextPageUrl": ".\/\/a[@title=\"下一页\"]\/@href",
+		"url": "https:\/\/www.booktxt.com\/search.php?keyword=%@"
+	},
+	"name": "顶点小说④"
+}

@@ -1,0 +1,66 @@
+{
+	"homeUrl": "http:\/\/www.aikantxt.la",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "\/\/div[@id=\"fmimg\"]\/img\/@src",
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"],
+			"typeText": "\/\/div[@class=\"con_top\"]\/a[2]\/text()",
+			"desc": "\/\/div[@id=\"intro\"]\/p\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 78,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[@id=\"list\"]\/\/dl\/dd[position()>9]",
+				"title": ".\/a\/text()",
+				"url": ".\/a\/@href"
+			},
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:06:15",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": ".\/td[1]\/a\/@href"
+			},
+			"author": ".\/td[3]\/text()",
+			"bookName": ".\/td[1]\/a\/text()",
+			"_list": "\/\/table[@class=\"grid\"]\/\/tr[position()>1]"
+		},
+		"forGetMethod": true,
+		"params": {
+			"searchtype": "articlename",
+			"searchkey": "%@",
+			"page": "%@calc(pageIndex + 1)"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "1",
+		"url": "http:\/\/www.aikantxt.la\/modules\/article\/search.php"
+	},
+	"name": "爱看TXT"
+}

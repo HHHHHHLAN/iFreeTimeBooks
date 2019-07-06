@@ -1,0 +1,71 @@
+{
+	"homeUrl": "https:\/\/www.i7wx.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "\/\/div[@id=\"bookimg\"]\/img\/@src",
+			"statusText": ".\/\/span[@class='pd_r'][6]\/text()",
+			"lastUpdateDate": ["\/\/span[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")", "@regex:T @=> "],
+			"typeText": ".\/\/span[@class='pd_r'][1]\/text()",
+			"wordCount": ".\/\/span[@class='pd_r'][5]\/text()",
+			"desc": "\/\/div[@id=\"bookintro\"]"
+		},
+		"params": {},
+		"url": "@dyn:b=source.helpId;check(!b, return nil); format('%@',b);"
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"content\"]"
+		},
+		"params": {},
+		"url": "@dyn:u=chapter.url; check(!u, return nil); bu=source.dirURL; format('%@\/%@',bu, u);"
+	},
+	"weight": 74,
+	"priorityEncoding": 2147485744,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": ["\/\/script\/text()", "@regex:\\\"upDate\\\": \\\".*?\\\" @[0]", "@regex:[1-9]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T(20|21|22|23|[0-1]\\d):[0-5]\\d:[0-5]\\d @[0]", "@regex:T @=> "],
+			"_1": {
+				"title": ".\/a\/text()",
+				"_list": "\/\/div[@id=\"readerlist\"]\/\/li",
+				"url": ".\/a\/@href"
+			}
+		},
+		"params": {},
+		"responseType": 0
+	},
+	"bookWorldGroupName": "优选",
+	"lastModifyTime": "2019-02-18 23:06:30",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": [".\/td[@class=\"even\"]\/a\/@href", "@regex:\/\\d+\\.html @=>"],
+				"helpId": ".\/td[@class=\"odd\"]\/a\/@href"
+			},
+			"author": ".\/td[3]\/text()",
+			"bookName": ".\/td[1]\/a\/text()",
+			"_list": "\/\/div[@id=\"conn\"]\/\/tr[position()>1]"
+		},
+		"forGetMethod": true,
+		"params": {},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"weight": "1000",
+		"url": "https:\/\/www.i7wx.com\/modules\/article\/search.php?searchkey=%@&searchtype=articlename",
+		"nextPageUrl": "\/\/div[@class=\"pagelink\"]\/a[@class=\"next\"]\/@href"
+	},
+	"name": "爱奇文学网"
+}

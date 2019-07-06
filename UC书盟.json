@@ -1,0 +1,60 @@
+{
+	"homeUrl": "http:\/\/www.uctxt.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "",
+			"statusText": ".\/\/i[1]\/text()",
+			"lastUpdateDate": ".\/\/i[3]\/text()",
+			"desc": [".\/\/p[contains(@class, \"intro\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 94,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": ".\/\/i[3]\/text()",
+			"_1": {
+				"_list": ".\/\/dl[contains(@class, \"chapter-list clrfix\")]\/dd",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:05:10",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/span[@class=\"name\"]\/a\/@href"
+			},
+			"author": ".\/\/span[@class=\"other\"]\/text()",
+			"bookName": ".\/\/span[@class=\"name\"]\/a\/text()",
+			"_list": "\/\/div[contains(@class, \"list-lastupdate\")]\/\/ul\/li",
+			"typeText": [".\/\/span[@class=\"class\"]\/text()", "@regex:\\[ @=>", "@regex:\\] @=>"]
+		},
+		"params": {},
+		"url": "http:\/\/www.uctxt.com\/modules\/article\/search.php?searchkey=%@"
+	},
+	"name": "UC书盟"
+}

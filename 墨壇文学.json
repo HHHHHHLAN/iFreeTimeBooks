@@ -1,0 +1,124 @@
+{
+	"homeUrl": "http:\/\/www.motanwx.com",
+	"enable": true,
+	"authorId": "f6c7b3b2e24e10542d9fb490b46c4752",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/p[@style]\/img\/@src",
+			"wordCount": [".\/\/div[@class=\"booksub\"]", "substring-after(., \"字数：\")", "substring-before(., \"字\")"],
+			"typeText": [".\/\/div[@class=\"booksub\"]", "substring-after(., \"类型：\")", "substring-before(., \"◆\")", "@regex:\\s+ @=>"],
+			"desc": ".\/\/div[@class=\"info_con\"]"
+		},
+		"params": {}
+	},
+	"bookWorld": {
+		"墨壇排行榜": {
+			"nextPageParams": {},
+			"parser": {
+				"_1": {
+					"dirURL": ".\/\/a[@class=\"fs14\"]\/@href",
+					"lastChapterTitle": ".\/\/a[@class=\"limit\"]\/text()"
+				},
+				"author": ".\/\/span[@class=\"author\"]\/a\/text()",
+				"bookName": ".\/\/a[@class=\"fs14\"]\/text()",
+				"_list": "\/\/ul[@class=\"main_con\"]\/li[not(@*)]",
+				"typeText": ".\/\/span[@class=\"kind\"]\/a\/text()",
+				"lastUpdateDate": ".\/\/span[@class=\"time\"]\/text()"
+			},
+			"forGetMethod": true,
+			"params": {},
+			"urls": [{
+				"sex": 2,
+				"name": "综合排行榜",
+				"_NewSubItems__": [{
+					"name": "总点击",
+					"url": "http:\/\/www.motanwx.com\/shuku_1.html"
+				}, {
+					"name": "总推荐",
+					"url": "http:\/\/www.motanwx.com\/shuku_4.html"
+				}, {
+					"name": "字数榜",
+					"url": "http:\/\/www.motanwx.com\/shuku_5.html"
+				}, {
+					"name": "最近更新",
+					"url": "http:\/\/www.motanwx.com\/shuku_6.html"
+				}, {
+					"name": "完结榜",
+					"url": "http:\/\/www.motanwx.com\/over_1.html"
+				}]
+			}, {
+				"sex": 2,
+				"name": "分类排行榜",
+				"_NewSubItems__": [{
+					"name": "全部",
+					"url": "http:\/\/www.motanwx.com\/shuku.html"
+				}, {
+					"name": "玄幻·奇幻",
+					"url": "http:\/\/www.motanwx.com\/xuanhuan\/shuku.html"
+				}, {
+					"name": "仙侠·修真",
+					"url": "http:\/\/www.motanwx.com\/xianxia\/shuku.html"
+				}, {
+					"name": "都市·言情",
+					"url": "http:\/\/www.motanwx.com\/dushi\/shuku.html"
+				}, {
+					"name": "穿越·重生",
+					"url": "http:\/\/www.motanwx.com\/chuanyue\/shuku.html"
+				}, {
+					"name": "科幻·灵异",
+					"url": "http:\/\/www.motanwx.com\/kehuan\/shuku.html"
+				}, {
+					"name": "同人·网游",
+					"url": "http:\/\/www.motanwx.com\/tongren\/shuku.html"
+				}]
+			}],
+			"maxPageCount": "10",
+			"nextPageForGetMedthod": true,
+			"nextPageUrl": ".\/\/a[@title=\"下一页\"]\/@href"
+		}
+	},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@itemprop]"
+		},
+		"params": {}
+	},
+	"weight": 98,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/tbody\/\/td",
+				"title": ".\/\/text()",
+				"url": ".\/\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:04:51",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/h2\/a\/@href"
+			},
+			"author": ".\/\/p[@class=\"rela\"]\/a\/text()",
+			"bookName": ".\/\/h2\/a\/text()",
+			"_list": "\/\/div[@class=\"con\"]\/div[@class=\"search_text\"]",
+			"typeText": [".\/\/span[contains(text(), \"分类\")]", "substring-after(., \"：\")"],
+			"desc": ".\/\/p[@class=\"j_info\"]\/text()"
+		},
+		"params": {},
+		"url": "http:\/\/www.motanwx.com\/plus\/search.php?q=%@"
+	},
+	"name": "墨壇文学"
+}

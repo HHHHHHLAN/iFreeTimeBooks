@@ -1,0 +1,63 @@
+{
+	"homeUrl": "https:\/\/www.hunhun520.com",
+	"enable": true,
+	"authorId": "f6c7b3b2e24e10542d9fb490b46c4752",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/img\/@src",
+			"desc": [".\/\/div[@id=\"intro\"]", "substring-after(., \"：\")"],
+			"typeText": [".\/\/p[contains(text(), \"别：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": [".\/\/div[@id=\"content\"]", "@regex:恋上.*?新章节！ @=>"]
+		},
+		"params": {}
+	},
+	"weight": 10,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": ".\/\/div[contains(@id, \"list\")]\/dl\/\/dd",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 21:44:07",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/span[@class=\"s2\"]\/a\/@href"
+			},
+			"author": ".\/\/span[@class=\"s4\"]\/text()",
+			"bookName": ".\/\/span[@class=\"s2\"]\/a\/text()",
+			"_list": ".\/\/div[contains(@class, \"nove\")]\/\/ul\/li",
+			"typeText": [".\/\/span[1]\/text()", "@regex:\\[ @=>", "@regex:\\] @=>"]
+		},
+		"forGetMethod": false,
+		"params": {
+			"searchkey": "%@"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"url": "https:\/\/www.hunhun520.com\/novel.php?action=search"
+	},
+	"name": "混混小说网™"
+}

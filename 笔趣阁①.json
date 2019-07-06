@@ -1,0 +1,67 @@
+{
+	"homeUrl": "http:\/\/www.bbiquge.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/img\/@src",
+			"wordCount": ["\/\/p[contains(text(), \"更新时间：\")]", "substring-after(., \"[共\")", "@regex:\\] @[0]=>"],
+			"lastUpdateDate": ["\/\/p[contains(text(), \"更新时间：\")]", "substring-after(., \"：\")", "@regex:\\[.*?\\]\\s+ @[0]=>"],
+			"desc": "\/\/div[@id=\"intro\"]"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 38,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": ["\/\/p[contains(text(), \"更新时间：\")]", "substring-after(., \"：\")", "@regex:\\[.*?\\]\\s+ @[0]=>"],
+			"_1": {
+				"_list": "\/\/div[contains(@id, \"list\")]\/dl\/\/dd",
+				"title": ".\/\/text()",
+				"url": ".\/\/@href"
+			}
+		},
+		"params": {}
+	},
+	"bookWorldGroupName": "优选",
+	"lastModifyTime": "2019-02-18 22:50:16",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/span[@class='s2']\/a\/@href"
+			},
+			"author": ".\/\/span[@class=\"s4\"]\/text()",
+			"bookName": ".\/\/span[@class=\"s2\"]\/a\/text()",
+			"_list": "\/\/div[contains(@id, \"main\")]\/\/li[position()>1]",
+			"typeText": ".\/\/span[@class=\"s1\"]\/text()"
+		},
+		"forGetMethod": true,
+		"params": {
+			"searchkey": "%@",
+			"page": "%@calc(pageIndex + 1)"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"url": "https:\/\/www.bbiquge.com\/modules\/article\/search.php"
+	},
+	"name": "笔趣阁①"
+}

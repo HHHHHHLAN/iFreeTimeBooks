@@ -1,0 +1,69 @@
+{
+	"homeUrl": "https:\/\/www.x88dushu.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/img\/@src",
+			"statusText": [".\/\/em[2]", "substring-after(., \"：\")"],
+			"lastUpdateDate": [".\/\/em[3]\/text()", "substring-after(., \"：\")"],
+			"typeText": ".\/\/div[@class=\"place\"]\/a[2]\/text()",
+			"desc": ".\/\/div[@class=\"intro\"]\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": "\/\/div[@class=\"yd_text2\"]"
+		},
+		"params": {}
+	},
+	"weight": 64,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[@class=\"mulu\"]\/\/a",
+				"title": ".\/text()",
+				"url": ".\/@href"
+			},
+			"lastUpdateDate": [".\/\/em[contains(text(), \"更新时间：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"bookWorldGroupName": "优选",
+	"lastModifyTime": "2019-02-18 23:07:12",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"author": [".\/\/p[2]\/text()", "substring-after(., \"：\")"],
+			"_1": {
+				"dirURL": ".\/\/div\/a\/@href"
+			},
+			"_list": "\/\/div[contains(@class, \"ops_cover\")]\/div",
+			"bookName": ".\/\/h2\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": [".\/\/p[4]\/text()", "@regex:\\s+ @[0]=>     "],
+			"typeText": [".\/\/p[3]\/text()", "substring-after(., \"：\")"]
+		},
+		"forGetMethod": true,
+		"params": {
+			"q": "%@"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"nextPageUrl": "\/\/div\/\/label[contains(text(), '下一页')]\/parent::*\/@href",
+		"url": "https:\/\/so.x88dushu.com\/search\/so.php"
+	},
+	"name": "八八读书网"
+}

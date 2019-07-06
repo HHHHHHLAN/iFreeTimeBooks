@@ -1,0 +1,131 @@
+{
+	"homeUrl": "https:\/\/www.shumi6.com",
+	"enable": true,
+	"authorId": "f6c7b3b2e24e10542d9fb490b46c4752",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@class=\"img\"]\/\/@src",
+			"desc": ".\/\/div[@class=\"introCon\"]\/text()"
+		},
+		"params": {}
+	},
+	"bookWorld": {
+		"看书楼": {
+			"nextPageParams": {},
+			"parser": {
+				"_1": {
+					"dirURL": ".\/\/div[@class=\"con3\"]\/a[1]\/@href"
+				},
+				"author": ".\/\/div[@class=\"con5\"]\/text()",
+				"bookName": ".\/\/div[@class=\"con3\"]\/a[1]\/text()",
+				"_list": ".\/\/div[contains(@class, \"toplistcon\")]\/\/li",
+				"lastUpdateDate": ".\/\/div[@class=\"con6\"]\/text()",
+				"typeText": [".\/\/div[@class=\"con2\"]", "@regex:\\[ @=>", "@regex:\\] @=>"]
+			},
+			"forGetMethod": true,
+			"params": {},
+			"urls": [{
+				"sex": 2,
+				"name": "日点击榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=dayvisit"
+			}, {
+				"sex": 2,
+				"name": "周点击榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=weekvisit"
+			}, {
+				"sex": 2,
+				"name": "月点击榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=monthvisit"
+			}, {
+				"sex": 2,
+				"name": "总点击榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=allvisit"
+			}, {
+				"sex": 2,
+				"name": "总推荐榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=allvote"
+			}, {
+				"sex": 2,
+				"name": "总收藏榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=goodnum"
+			}, {
+				"sex": 2,
+				"name": "总字数榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=size"
+			}, {
+				"sex": 2,
+				"name": "最新入库",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=postdate"
+			}, {
+				"sex": 2,
+				"name": "转载更新",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=masterupdate"
+			}, {
+				"sex": 2,
+				"name": "最近更新",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=lastupdate"
+			}, {
+				"sex": 2,
+				"name": "本站推荐",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=toptime"
+			}, {
+				"sex": 2,
+				"name": "新书榜",
+				"url": "https:\/\/www.shumi6.com\/modules\/article\/toplist.php?sort=goodnew"
+			}],
+			"maxPageCount": "10",
+			"nextPageForGetMedthod": true,
+			"nextPageUrl": ".\/\/a[@class=\"next\"]\/@href"
+		}
+	},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@class=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 58,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": ".\/\/div[contains(@class, \"ocon\")]\/\/dd",
+				"title": ".\/\/text()",
+				"url": ".\/\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:07:38",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/td[@class=\"odd\"]\/a\/@href"
+			},
+			"author": ".\/td[@class=\"odd\"][2]\/text()",
+			"bookName": ".\/\/td[@class=\"odd\"]\/a\/text()",
+			"_list": ".\/\/table[contains(@class, \"grid\")]\/\/tr[position()>1]"
+		},
+		"forGetMethod": false,
+		"params": {
+			"searchtype": "1",
+			"searchkey": "%@"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"url": "https:\/\/www.shumi6.com\/modules\/article\/search.php",
+		"nextPageUrl": ".\/\/a[@class=\"next\"]\/@href"
+	},
+	"name": "看书楼"
+}

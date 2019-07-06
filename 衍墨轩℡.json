@@ -1,0 +1,52 @@
+{
+	"homeUrl": "https:\/\/www.ymoxuan.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@class=\"cover\"]\/img\/@src",
+			"desc": [".\/\/p[@class=\"desc\"]", "substring-after(., \"：\")"],
+			"lastUpdateDate": [".\/\/p[@class=\"detail\"][1]", "substring-after(., \"：\")"]
+		},
+		"params": {},
+		"url": "@dyn:u=source.helpId; check(!u, return nil); format('%@', u)"
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"weight": 60,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/article[contains(@class, \"info\")]\/\/ul\/li",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:07:28",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": [".\/span[@class=\"c2\"]\/a\/@href", "@regex:\\d+\\.html @=>index.html"],
+				"helpId": ".\/span[@class=\"n2\"]\/a\/@href"
+			},
+			"author": ".\/span[@class=\"a2\"]\/a\/text()",
+			"bookName": ".\/span[@class=\"n2\"]\/a\/text()",
+			"_list": "\/\/div[contains(@class, \"left\")]\/\/ul\/li[position()>1]",
+			"typeText": ".\/span[@class=\"nt\"]\/text()"
+		},
+		"params": {},
+		"url": "https:\/\/www.ymoxuan.com\/search.htm?keyword=%@"
+	},
+	"name": "衍墨轩℡"
+}

@@ -1,0 +1,73 @@
+{
+	"homeUrl": "http:\/\/www.yunlaige.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@class=\"book-info\"]\/\/img\/@src",
+			"statusText": ".\/\/p[@class=\"intr\"]\/a[3]\/text()",
+			"typeText": ".\/\/p[@class=\"intr\"]\/a[2]\/text()",
+			"desc": ".\/\/p[@class=\"con\"]"
+		},
+		"params": {},
+		"url": "@dyn:u=source.helpId; check(!u, return nil); format('%@', u)"
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ["\/\/div[@id=\"content\"]", "@regex:第.*?章.*?< @=>"]
+		},
+		"params": {}
+	},
+	"weight": 72,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"nextPageParams": {},
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/table[contains(@class, \"table\")]\/\/tr\/td",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": 1
+	},
+	"lastModifyTime": "2019-02-18 23:06:40",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"author": [".\/\/p[@class=\"author\"]\/text()", "substring-before(., \"\/\")", "@regex:\\s+ @=>"],
+			"_1": {
+				"dirURL": ".\/\/h2[@class=\"gxz\"]\/a\/@href",
+				"helpId": ".\/\/h2[@class=\"clearfix\"]\/a\/@href"
+			},
+			"_list": "\/\/div[contains(@class, \"listbox\")]\/\/ul\/li",
+			"bookName": ".\/\/h2[@class=\"clearfix\"]\/a\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/\/p[@class=\"info\"]\/text()",
+			"typeText": [".\/\/p[@class=\"author\"]\/text()", "substring-after(., \"\/\")"]
+		},
+		"forGetMethod": false,
+		"params": {
+			"searchkey": "%@",
+			"action": "login"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"nextPageUrl": ".\/\/a[@class=\"next\"]\/@href",
+		"url": "http:\/\/www.yunlaige.com\/modules\/article\/search.php"
+	},
+	"name": "云来阁小说"
+}

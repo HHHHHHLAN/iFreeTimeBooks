@@ -1,0 +1,68 @@
+{
+	"homeUrl": "https:\/\/www.wenxuemi.com",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@id=\"fmimg\"]\/img\/@src",
+			"statusText": ["\/\/p[contains(text(), \"态：\")]", "substring-after(., \"：\")"],
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"],
+			"typeText": ".\/\/div[@class=\"con_top\"]\/a[2]\/text()",
+			"desc": ".\/\/div[@id=\"intro\"]"
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@id=\"content\"]"
+		},
+		"params": {}
+	},
+	"weight": 46,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": "\/\/div[@id=\"list\"]\/\/dl\/dd",
+				"title": ".\/a\/text()",
+				"url": ".\/a\/@href"
+			},
+			"lastUpdateDate": ["\/\/p[contains(text(), \"最后更新：\")]", "substring-after(., \"：\")"]
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:08:26",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"author": [".\/\/div[@class=\"result-game-item-info\"]\/p[1]\/span[2]\/text()", "@regex:&#13; @=>", "@regex:\\s+ @=>"],
+			"_1": {
+				"dirURL": ".\/div[@class=\"result-game-item-detail\"]\/h3\/a\/@href"
+			},
+			"_list": "\/\/div[contains(@class, \"result-list\")]\/div",
+			"bookName": ".\/div[@class=\"result-game-item-detail\"]\/h3\/a\/span\/text()",
+			"coverUrl": ".\/\/img\/@src",
+			"desc": ".\/\/p[@class=\"result-game-item-desc\"]\/text()",
+			"typeText": ".\/\/div[@class=\"result-game-item-info\"]\/p[2]\/span[2]\/text()"
+		},
+		"forGetMethod": true,
+		"params": {
+			"keyword": "%@",
+			"page": "%@calc(pageIndex + 1)"
+		},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"url": "https:\/\/www.wenxuemi.com\/search.php"
+	},
+	"name": "文学迷"
+}

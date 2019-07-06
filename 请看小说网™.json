@@ -1,0 +1,57 @@
+{
+	"homeUrl": "https:\/\/www.qk6.org",
+	"enable": true,
+	"authorId": "f6c7b3b2e24e10542d9fb490b46c4752",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": "",
+			"desc": ""
+		},
+		"params": {}
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"customFormatValueParam": "JxdSecuritySub.Gb2312Encoded:value",
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": [".\/\/div[@id=\"readbox\"]", "@regex:.*?新章节！ @=>"]
+		},
+		"params": {}
+	},
+	"weight": 55,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"_list": ".\/\/div[contains(@id, \"box\")]\/\/li",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:09:38",
+	"responseType": 0,
+	"searchBook": {
+		"forGetMethod": true,
+		"parser": {
+			"_1": {
+				"dirURL": ".\/\/span[@class=\"sp_menu\"]\/a[1]\/@href"
+			},
+			"author": [".\/\/span[@class=\"sp_name\"]", "substring-after(., \"\/ \")"],
+			"bookName": ".\/\/a[@class=\"sp_bookname\"]\/text()",
+			"_list": ".\/\/div[contains(@id, \"right_cont\")]\/div",
+			"desc": ".\/\/p[@class=\"jj_txt\"]\/text()"
+		},
+		"params": {},
+		"url": "https:\/\/www.qk6.org\/novel.php?action=search&searchtype=novelname&searchkey=%@&input="
+	},
+	"name": "请看小说网™"
+}

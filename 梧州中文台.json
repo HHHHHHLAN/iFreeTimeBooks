@@ -1,0 +1,65 @@
+{
+	"homeUrl": "http:\/\/www.wzzw.la",
+	"enable": true,
+	"authorId": "bd53bafb37a0114e42204954852ecdf3",
+	"bookDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"coverUrl": ".\/\/div[@class=\"col-xs-2\"]\/img\/@src",
+			"statusText": [".\/\/li[contains(text(), \"写作进度\")]", "substring-after(., \"：\")"],
+			"lastUpdateDate": [".\/\/li[contains(text(), \"更新时间\")]", "substring-after(., \"：\")"],
+			"typeText": [".\/\/li[contains(text(), \"类别\")]", "substring-after(., \"：\")"],
+			"desc": ".\/\/p[@id=\"shot\"]\/text()"
+		},
+		"params": {},
+		"url": "@dyn:u=source.helpId; check(!u, return nil); format('%@', u)"
+	},
+	"bookWorld": {},
+	"httpConfigs": {
+		"headers": {},
+		"useCookies": true
+	},
+	"chapterDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"content": ".\/\/div[@id=\"txtContent\"]"
+		},
+		"params": {}
+	},
+	"weight": 86,
+	"priorityEncoding": 4,
+	"needSupportDynTask": true,
+	"sourceDetail": {
+		"forGetMethod": true,
+		"parser": {
+			"lastUpdateDate": [".\/\/li[contains(text(), \"更新时间\")]", "substring-after(., \"：\")"],
+			"_1": {
+				"_list": "\/\/ul[@class=\"list-group-item\"]\/li",
+				"title": ".\/\/a\/text()",
+				"url": ".\/\/a\/@href"
+			}
+		},
+		"params": {}
+	},
+	"lastModifyTime": "2019-02-18 23:05:43",
+	"responseType": 0,
+	"searchBook": {
+		"nextPageParams": {},
+		"parser": {
+			"_1": {
+				"dirURL": [".\/\/div[@class=\"col-xs-4\"]\/a\/@href", "@regex:[a-z0-9]{2,11}\\.(html|htm) @=>"],
+				"helpId": ".\/\/div[@class=\"col-xs-3\"]\/a\/@href"
+			},
+			"author": ".\/\/div[@class=\"col-xs-2\"]\/text()",
+			"bookName": ".\/\/div[@class=\"col-xs-3\"]\/a\/text()",
+			"_list": "\/\/div[contains(@id, \"novel-list\")]\/\/ul\/li[position()>1]",
+			"typeText": " .\/\/i\/text()"
+		},
+		"forGetMethod": true,
+		"params": {},
+		"nextPageForGetMedthod": true,
+		"maxPageCount": "10",
+		"url": "http:\/\/www.wzzw.la\/search.htm?keyword=%@&pn=%@calc(pageIndex + 1)"
+	},
+	"name": "梧州中文台"
+}
